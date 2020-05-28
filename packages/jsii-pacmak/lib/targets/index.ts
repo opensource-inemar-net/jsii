@@ -2,11 +2,12 @@ import { OneByOneBuilder, TargetBuilder, BuildOptions } from '../builder';
 
 import { DotnetBuilder } from './dotnet';
 import { JavaBuilder } from './java';
+import { RustBuilder } from './rust';
 import JavaScript from './js';
 import Python from './python';
 import { JsiiModule } from '../packaging';
 
-export type TargetName = 'dotnet' | 'java' | 'js' | 'python';
+export type TargetName = 'dotnet' | 'java' | 'js' | 'python' | 'rust';
 export type BuilderFactory = (
   modules: JsiiModule[],
   options: BuildOptions,
@@ -15,6 +16,7 @@ export type BuilderFactory = (
 export const ALL_BUILDERS: { [key in TargetName]: BuilderFactory } = {
   dotnet: (ms, o) => new DotnetBuilder(ms, o),
   java: (ms, o) => new JavaBuilder(ms, o),
+  rust: (ms, o) => new RustBuilder(ms, o),
   js: (ms, o) => new OneByOneBuilder('js', JavaScript, ms, o),
   python: (ms, o) => new OneByOneBuilder('python', Python, ms, o),
 };

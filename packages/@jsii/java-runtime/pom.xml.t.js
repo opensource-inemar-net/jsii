@@ -131,6 +131,10 @@ process.stdout.write(`<?xml version="1.0" encoding="UTF-8"?>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!-- <verbose>true</verbose>
+                    <fork>true</fork>
+                    <compilerVersion>1.8</compilerVersion>
+                    <executeable>/usr/lib/jvm/java-8-openjdk-amd64/bin/javac</executeable> -->
                 </configuration>
             </plugin>
 
@@ -161,6 +165,7 @@ process.stdout.write(`<?xml version="1.0" encoding="UTF-8"?>
                     </execution>
                 </executions>
                 <configuration>
+                    <source>8</source>
                     <failOnWarnings>false</failOnWarnings>
                     <show>protected</show>
                 </configuration>

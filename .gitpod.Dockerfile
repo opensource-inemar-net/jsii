@@ -22,4 +22,7 @@ RUN apt-get install -y apt-transport-https && \
 ENV M2_HOME=/usr/local/apache-maven                                                                                     \
     M2=/usr/local/apache-maven/bin                                                                                      \
     MAVEN_OPTS="-Xms256m -Xmx512m"
+
+RUN apt-get install -y openjdk-8-jdk
+
     
